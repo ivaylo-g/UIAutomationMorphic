@@ -18,17 +18,17 @@ namespace MorphicLiteAutomation.Objects
                 Console.WriteLine($"The On button on High Contrast was not found: '{e}'");
             }
         }
-            public void CheckHighContrastOff()
+        public void CheckHighContrastOff()
+        {
+            try
             {
-                try
-                {
-                    driver.FindElementByName("Turn Off High Contrast").Click();
-                    Console.WriteLine("Clicks on High Contrasts Off button");
-                }
-                catch (IOException e)
-                {
-                    Console.WriteLine($"The Off button on High Contrast was not found: '{e}'");
-                }
+                driver.FindElementByName("Turn Off High Contrast").Click();
+                Console.WriteLine("Clicks on High Contrasts Off button");
             }
+            catch (IOException e)
+            {
+                Console.WriteLine($"The Off button on High Contrast was not found: '{e}'");
+            }
+        }
     }
 }

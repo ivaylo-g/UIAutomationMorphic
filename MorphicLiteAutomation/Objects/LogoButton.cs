@@ -7,7 +7,8 @@ namespace MorphicLiteAutomation.Objects
     {
         public void CheckLogoButton()
         {
-            try {
+            try
+            {
                 driver.FindElementByName("Main Menu").Click();
                 Console.WriteLine("Clicks on Morphic Logo button");
 
