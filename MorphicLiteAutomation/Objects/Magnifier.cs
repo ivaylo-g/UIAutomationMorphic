@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace MorphicLiteAutomation.Objects
 {
@@ -12,6 +14,19 @@ namespace MorphicLiteAutomation.Objects
             {
                 driver.FindElementByName("Show a Magnifying Glass").Click();
                 Console.WriteLine("Clicks on Show button on Magnifying Glass");
+                Thread.Sleep(5000);
+
+                //get all processes
+/*                Process[] localAll = Process.GetProcesses();*/
+                Process[] pname = Process.GetProcessesByName("Magnify");
+                if (pname.Length > 0)
+                {
+                    Console.WriteLine("Magnifier process is running");
+                }
+                else
+                {
+                    throw new IOException(" Magnifier process is not running");
+                }
             }
             catch (IOException e)
             {
@@ -24,6 +39,19 @@ namespace MorphicLiteAutomation.Objects
             {
                 driver.FindElementByName("Hide the Magnifying Glass").Click();
                 Console.WriteLine("Clicks on Hide button on Magnifying Glass");
+
+                Thread.Sleep(5000);
+
+
+                Process[] pname = Process.GetProcessesByName("Magnify");
+                if (pname.Length == 0)
+                {
+                    Console.WriteLine("Magnifier process is not running");
+                }
+                else
+                {
+                    throw new IOException("Magnifier process is running after the button for stopping has been pressed");
+                }
             }
             catch (IOException e)
             {

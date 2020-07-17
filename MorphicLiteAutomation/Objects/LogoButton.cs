@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 
 namespace MorphicLiteAutomation.Objects
 {
@@ -17,8 +18,9 @@ namespace MorphicLiteAutomation.Objects
             {
                 Console.WriteLine($"The Main Menu button was not found: '{e}'");
             }
+            Thread.Sleep(1000);
 
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+/*            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);*/
         }
     }
 }

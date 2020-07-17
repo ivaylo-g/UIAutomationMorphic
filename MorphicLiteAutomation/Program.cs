@@ -6,6 +6,10 @@ namespace MorphicLiteAutomation
     {
         static void Main()
         {
+
+            Install install = new Install();
+            install.InstallMorphic();
+
             SetUp setUp = new SetUp();
             setUp.Initialize();
 
@@ -23,17 +27,21 @@ namespace MorphicLiteAutomation
             screenReader.CheckScreenReaderHide();
 
             Volume volume = new Volume();
+            volume.CheckMuteAllSounds();
             volume.CheckTurntheVolumeUp();
             volume.CheckTurntheVolumeDown();
-            volume.CheckMuteAllSounds();
 
 
-            HighContrast highContrast = new HighContrast();
+
+            Contrast highContrast = new Contrast();
             highContrast.CheckHighContrastOn();
             highContrast.CheckHighContrastOff();
 
             LogoButton logoButton = new LogoButton();
             logoButton.CheckLogoButton();
+
+            Uninstall uninstall = new Uninstall();
+            uninstall.UninstallMorphic();
         }
     }
 }
