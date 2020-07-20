@@ -14,10 +14,11 @@ namespace MorphicLiteAutomation.Objects
             {
                 driver.FindElementByName("Show a Magnifying Glass").Click();
                 Console.WriteLine("Clicks on Show button on Magnifying Glass");
-                Thread.Sleep(5000);
+                Thread.Sleep(3000);
 
-                //get all processes
+                //This is to view what it is the process name of Mangifier
 /*                Process[] localAll = Process.GetProcesses();*/
+
                 Process[] pname = Process.GetProcessesByName("Magnify");
                 if (pname.Length > 0)
                 {
@@ -40,7 +41,7 @@ namespace MorphicLiteAutomation.Objects
                 driver.FindElementByName("Hide the Magnifying Glass").Click();
                 Console.WriteLine("Clicks on Hide button on Magnifying Glass");
 
-                Thread.Sleep(5000);
+                Thread.Sleep(3000);
 
 
                 Process[] pname = Process.GetProcessesByName("Magnify");

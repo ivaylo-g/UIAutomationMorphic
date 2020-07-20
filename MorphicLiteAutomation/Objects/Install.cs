@@ -19,7 +19,15 @@ namespace MorphicLiteAutomation.Objects
             process.Start();
             process.StandardInput.WriteLine("cd C:\\Users\\vagrant\\Documents\\");
             process.StandardInput.WriteLine("Morphic.msi");
-            Thread.Sleep(11000);
+            bool found = false;
+            while (!found)
+            {
+                foreach (Process clsProcess in Process.GetProcesses())
+                    if (clsProcess.ProcessName == "Morphic")
+                        found = true;
+                Thread.Sleep(1000);
+            }
+
         }
     }
 }

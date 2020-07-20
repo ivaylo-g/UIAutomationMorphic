@@ -14,8 +14,8 @@ namespace MorphicLiteAutomation
             setUp.Initialize();
 
             TextSize textSize = new TextSize();
-            textSize.CheckTextSizePlus();
-            textSize.CheckTextSizeMinus();
+            textSize.TestIncreaseTextSize();
+            textSize.TestDecreaseTextSize();
 
 
             Magnifier magnifier = new Magnifier();
@@ -27,9 +27,9 @@ namespace MorphicLiteAutomation
             screenReader.CheckScreenReaderHide();
 
             Volume volume = new Volume();
-            volume.CheckMuteAllSounds();
-            volume.CheckTurntheVolumeUp();
-            volume.CheckTurntheVolumeDown();
+            volume.TestMute();
+            volume.TestVolumeUp();
+            volume.TestVolumeDown();
 
 
 

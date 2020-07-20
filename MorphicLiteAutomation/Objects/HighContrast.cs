@@ -15,9 +15,12 @@ namespace MorphicLiteAutomation.Objects
             {
                 driver.FindElementByName("Turn On High Contrast").Click();
                 Console.WriteLine("Clicks on High Contrast On button");
-/*                Console.WriteLine(SystemInformation.HighContrast.ToString());*/
+
+                // This is to check the value of SystemInformation.HighContrast 
+                /*                Console.WriteLine(SystemInformation.HighContrast.ToString());*/
+
                 Assert.AreEqual(SystemInformation.HighContrast.ToString(), "True");
-                Thread.Sleep(10000);
+                Thread.Sleep(3000);
             }
             catch (IOException e)
             {
@@ -30,8 +33,7 @@ namespace MorphicLiteAutomation.Objects
             {
                 driver.FindElementByName("Turn Off High Contrast").Click();
                 Console.WriteLine("Clicks on High Contrasts Off button");
-                Thread.Sleep(10000);
-/*                Console.WriteLine(SystemInformation.HighContrast.ToString());*/
+                Thread.Sleep(3000);
                 Assert.AreEqual(SystemInformation.HighContrast.ToString(), "False");
             }
             catch (IOException e)

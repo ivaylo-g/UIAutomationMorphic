@@ -14,7 +14,7 @@ namespace MorphicLiteAutomation.Objects
             try
             {
                 driver.FindElementByName("Turn On Screen Reader").Click();
-                Thread.Sleep(5000);
+                Thread.Sleep(3000);
 
                 Console.WriteLine("Clicks on the Screen Reader On button");
 
@@ -39,7 +39,7 @@ namespace MorphicLiteAutomation.Objects
             {
                 driver.FindElementByName("Turn Off Screen Reader").Click();
                 Console.WriteLine("Clicks on the Screen Reader Off Button");
-                Thread.Sleep(10000);
+                Thread.Sleep(3000);
 
                 Process[] CheckNarratorIsMissing = Process.GetProcessesByName("Narrator");
                 if (CheckNarratorIsMissing.Length == 0)
@@ -48,7 +48,7 @@ namespace MorphicLiteAutomation.Objects
                 }
                 else
                 {
-                    throw new IOException("Narrator process is running");
+                    throw new IOException("Narrator process is STILL running");
                 }
             }
             catch (IOException e)

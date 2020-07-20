@@ -8,7 +8,7 @@ namespace MorphicLiteAutomation.Objects
     class Volume : SetUp
     {
 
-        public void CheckMuteAllSounds()
+        public void TestMute()
         {
             try
             {
@@ -20,13 +20,15 @@ namespace MorphicLiteAutomation.Objects
                 var muteStateTrue = defaultAudioEndpoint.GetMasterMuteState();
                 Assert.IsTrue(muteStateTrue);
 
+                defaultAudioEndpoint.SetMasterMuteState(false);
+
             }
             catch (IOException e)
             {
                 Console.WriteLine($"The mute button on Volume was not found: '{e}'");
             }
         }
-        public void CheckTurntheVolumeUp()
+        public void TestVolumeUp()
         {
             try
             {
@@ -35,20 +37,18 @@ namespace MorphicLiteAutomation.Objects
                 float beforeVolumeUp = defaultAudioEndpoint.GetMasterVolumeLevel();
                 Assert.AreEqual(beforeVolumeUp, 0.5f);
 
+                //
                 driver.FindElementByName("Turn the Volume Up").Click();
-                float afterFirstVolumeUp = defaultAudioEndpoint.GetMasterVolumeLevel();
-                Assert.AreEqual(afterFirstVolumeUp, 0.5f);
+                float changedVolume = defaultAudioEndpoint.GetMasterVolumeLevel();
+                Assert.AreEqual(changedVolume, 0.6f);
 
-                driver.FindElementByName("Turn the Volume Up").Click();
-                float afterSecondVolumeUp = defaultAudioEndpoint.GetMasterVolumeLevel();
-                Assert.AreEqual(afterSecondVolumeUp, 0.6f);
             }
             catch (IOException e)
             {
                 Console.WriteLine($"The plus button on Volume was not found: '{e}'");
             }
         }
-        public void CheckTurntheVolumeDown()
+        public void TestVolumeDown()
         {
             try
             {

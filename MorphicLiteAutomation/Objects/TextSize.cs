@@ -5,7 +5,7 @@ namespace MorphicLiteAutomation.Objects
 {
     class TextSize : SetUp
     {
-        public void CheckTextSizePlus()
+        public void TestIncreaseTextSize()
         {
             try
             {
@@ -17,7 +17,7 @@ namespace MorphicLiteAutomation.Objects
                 Console.WriteLine($"The plus button on Text Size was not found: '{e}'");
             }
         }
-        public void CheckTextSizeMinus()
+        public void TestDecreaseTextSize()
         {
             try
             {

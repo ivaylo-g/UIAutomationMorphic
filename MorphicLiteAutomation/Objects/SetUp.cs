@@ -15,15 +15,6 @@ namespace MorphicLiteAutomation.Objects
 
         public void Initialize()
         {
-/*            Process process = new Process();
-            process.StartInfo.FileName = "cmd.exe";
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.RedirectStandardInput = true;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.UseShellExecute = false;
-            process.Start();
-            process.StandardInput.WriteLine("cd C:\\Program Files\\Morphic\\");
-            process.StandardInput.WriteLine("Morphic.exe");*/
             AppiumOptions desiredCapabilities = new AppiumOptions();
             desiredCapabilities.
                 AddAdditionalCapability("app", appPath);
