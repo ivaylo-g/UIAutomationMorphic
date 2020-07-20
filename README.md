@@ -9,4 +9,3 @@ Enable Developer Mode in Windows settings
 Run WinAppDriver.exe from the installation directory (E.g. C:\Program Files (x86)\Windows Application Driver)
 Windows Application Driver will then be running on the test machine listening to requests on the default IP address and port (127.0.0.1:4723).
 
-### Run the project
