@@ -17,7 +17,7 @@ namespace MorphicLiteAutomation.Objects
                 Thread.Sleep(3000);
 
                 //This is to view what it is the process name of Mangifier
-/*                Process[] localAll = Process.GetProcesses();*/
+                /*                Process[] localAll = Process.GetProcesses();*/
 
                 Process[] pname = Process.GetProcessesByName("Magnify");
                 if (pname.Length > 0)

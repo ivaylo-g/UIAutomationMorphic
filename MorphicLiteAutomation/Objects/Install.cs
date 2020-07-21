@@ -7,7 +7,8 @@ namespace MorphicLiteAutomation.Objects
     class Install
     {
 
-        public void InstallMorphic() {
+        public void InstallMorphic()
+        {
             WebClient webClient = new WebClient();
             webClient.DownloadFile("https://dw2oujmdhok1n.cloudfront.net/win/x64/stable/MorphicSetup.msi", @"C:\Users\vagrant\Documents\Morphic.msi");
             Process process = new Process();

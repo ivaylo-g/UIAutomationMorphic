@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 using System;
-using System.Diagnostics;
 
 namespace MorphicLiteAutomation.Objects
 {
